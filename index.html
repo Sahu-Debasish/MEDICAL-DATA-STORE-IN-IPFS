@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPFS File Uploader</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>IPFS File Uploader</h2>
+        
+        <div id="fileInputContainer">
+            <input type="file" id="fileInput" />
+            <label for="fileInput" id="fileInputLabel">Choose a File</label>
+        </div>
+
+        <button onclick="uploadFile()">Upload File</button>
+
+        <div id="result"></div>
+        <div class="uploading-message">Uploading...</div>
+
+        <button onclick="copyLink()">Copy Link</button>
+        <button onclick="shareLink()">Share Link</button>
+
+        <!-- Create New button and modal -->
+        <button onclick="openCreateNewModal()">Create New</button>
+
+        <div id="createNewModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeCreateNewModal()">&times;</span>
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" required>
+                <label for="disease">Disease:</label>
+                <input type="text" id="disease" required>
+                <label for="entryDate">Entry Date:</label>
+                <input type="date" id="entryDate" required>
+                <button onclick="createNewEntry()">Save</button>
+            </div>
+        </div>
+
+        <!-- QR code container and download button -->
+        <div id="qrcodeContainer"></div>
+        <button onclick="downloadQRCode()">Download QR Code</button>
+
+        <!-- Download CSV button -->
+        <button onclick="downloadCSV()">Download CSV</button>
+    </div>
+
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
